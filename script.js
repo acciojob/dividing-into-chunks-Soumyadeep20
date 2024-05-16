@@ -2,8 +2,8 @@ const arr = [1, 2, 3, 4, 1, 0, 2, 2];
 
 const divide = (arr, n) => {
 	let sum=0
-	x=[];
-	y=[]
+	var x=[];
+	 var y=[]
 	for(let a of arr){
 		sum =sum+a;
 		if(sum<=n){
@@ -11,9 +11,18 @@ const divide = (arr, n) => {
 		}
 		else{
 			x.push(y)
-			y=[a]
+			if(a<=n){
+				y=[a]
+				sum=a
+			}
+			else{
+				y=[]
+				sum=0
+			}
+			
 		}
 	}
+	x.push(y)
 	return x;
   // Write your code here
 };
